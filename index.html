@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Marksheet</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header class="ribbon">
+        <div class="logo">
+            <!-- Replace 'logo.png' with your actual logo file -->
+            <img src="546px-TamilNadu_Logo.svg.png" alt="Logo" width="50" height="50">
+        </div>
+        <h1>Tamil Nadu Model Schools - Evaluation</h1>
+    </header>
+    <div class="layout-container">
+        <div class="main-content">
+            <div id="step1" class="step">
+                <h3>Upload Topic CSV</h3>
+                <input type="file" id="csvFile" accept=".csv"><br>
+                <h3>Upload Roll Numbers CSV</h3>
+                <input type="file" id="rollNoCsvFile" accept=".csv"><br><br>
+                <button onclick="handleCsvUpload()">Upload and Generate Topics</button>
+            </div>
+
+            <div id="step2" class="step" style="display: none;">
+                <h2>Enter Details for Each Topic</h2>
+                <div id="topicsContainer"></div>
+            </div>
+
+            <div id="step3" class="step" style="display: none;">
+                <h2 id="studentTitle"></h2>
+                <div id="questionsContainer"></div>
+                <div class="button-container">
+                    <button onclick="prevTopic()">Previous Topic</button>
+                    <button onclick="nextTopic()">Next Topic</button>
+                </div>
+            </div>
+
+            <div id="report" style="display: none;">
+                <div id="reportContainer"></div>
+                <button id="downloadCSVBtn" class="download-button" onclick="downloadCSV()">Download CSV</button>
+                <button id="logoutBtn" class="download-button" onclick="logout()">Logout</button>
+            </div>
+        </div>
+
+        <div id="navigationPanel" class="navigation-panel"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
